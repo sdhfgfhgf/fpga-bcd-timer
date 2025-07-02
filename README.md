@@ -4,6 +4,18 @@ This project implements a 4-digit BCD (Binary-Coded Decimal) counter in Verilog 
 
 ⸻
 
+🔧 Features
+- 50 MHz clock-based counter
+- Displays digits on HEX[3:0] 7-segment displays
+- Resets with pushbutton (KEY[0])
+- Digit update intervals:
+- bcd0 → ~0.01 seconds
+- bcd1 → ~0.1 seconds
+- bcd2 → ~1 second
+- bcd3 → ~10 seconds
+
+⸻
+
 🖼️ Demo
 
 <img src="Image/HEIF Image.jpeg" alt="DE1 BCD Counter Demo" width="50%" />
@@ -15,18 +27,6 @@ The bit-width of the internal count register is based on:
 2^x × 20ns = 0.01s  →  x ≈ 19
 
 Thus, a 19-bit counter is used to generate the base timing signal from a 50 MHz clock.
-
-⸻
-
-🔧 Features
-- 50 MHz clock-based counter
-- Displays digits on HEX[3:0] 7-segment displays
-- Resets with pushbutton (KEY[0])
-- Digit update intervals:
-- bcd0 → ~0.01 seconds
-- bcd1 → ~0.1 seconds
-- bcd2 → ~1 second
-- bcd3 → ~10 seconds
 
 ⸻
 
