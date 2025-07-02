@@ -42,4 +42,3 @@ This project implements a **4-digit BCD (Binary-Coded Decimal) counter** in Veri
 - Clean BCD carry logic cascades across four decimal digits
 - Modular design separates core logic from display driver
 
-⸻
