@@ -6,7 +6,7 @@ This project implements a 4-digit BCD (Binary-Coded Decimal) counter in Verilog 
 
 🖼️ Demo
 
-<img src="images/bcd-demo.png" alt="DE1 BCD Counter Demo" width="50%" />
+<img src="Image/HEIF Image.jpeg" alt="DE1 BCD Counter Demo" width="50%" />
 
 
 The number display shows a BCD counter with four signals that count every 0.01 seconds.
