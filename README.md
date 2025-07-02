@@ -1,44 +1,63 @@
-# ⏱️ Accurate FPGA Verilog BCD Counter
+Perfect. Here’s your final README.md update with the actual demo image and your description integrated clearly and professionally:
 
-This project implements a **4-digit BCD (Binary-Coded Decimal) counter** in Verilog with near-accurate real-time intervals. Developed as part of **APSC 262 – Digital Logic Design** at UBC.
+⸻
 
----
+⏱️ Accurate FPGA Verilog BCD Counter
 
-## 🔧 Features
+This project implements a 4-digit BCD (Binary-Coded Decimal) counter in Verilog with near-accurate real-time intervals. Developed as part of APSC 262 – Digital Logic Design at UBC.
+
+⸻
+
+🖼️ Demo
+
+<img src="images/bcd-demo.png" alt="DE1 BCD Counter Demo" width="65%" />
+
+
+Figure 2. The number display shows a BCD counter with four signals that count every 0.01 seconds.
+The bit-width of the internal count register is based on:
+
+2^x × 20ns = 0.01s  →  x ≈ 19
+
+Thus, a 19-bit counter is used to generate the base timing signal from a 50 MHz clock.
+
+⸻
+
+🔧 Features
 - 50 MHz clock-based counter
-- Displays digits on `HEX[3:0]` 7-segment displays
-- Resets with pushbutton (`KEY[0]`)
+- Displays digits on HEX[3:0] 7-segment displays
+- Resets with pushbutton (KEY[0])
 - Digit update intervals:
-  - `bcd0` → 0.01 seconds
-  - `bcd1` → 0.1 seconds
-  - `bcd2` → 1 second
-  - `bcd3` → 10 seconds
+- bcd0 → ~0.01 seconds
+- bcd1 → ~0.1 seconds
+- bcd2 → ~1 second
+- bcd3 → ~10 seconds
 
----
+⸻
 
-## 📁 File List
-| File        | Description                            |
-|-------------|----------------------------------------|
-| `Lab5II.v`  | Main module: 4-digit BCD counter logic |
-| `bcd7seg.v` | Converts BCD digits to 7-segment code  |
+📄 File
 
----
+File	Description
+bcd-counter.v	Complete Verilog design with display logic and timing counter
 
-## 🚀 How to Use (on Quartus / FPGA)
-1. Create a new Quartus project
-2. Add both `Lab5II.v` and `bcd7seg.v`
-3. Assign FPGA I/O:
-   - `CLOCK_50` → 50 MHz clock input
-   - `KEY[0]` → active-low reset
-   - `HEX[3:0]` → output displays
-   - `LEDG[7:0]` → (optional) debug output
 
-4. Compile and flash to DE1 board
+⸻
 
----
+🚀 How to Use (on Quartus / FPGA)
+	1.	Create a new Quartus project.
+	2.	Add bcd-counter.v to your project.
+	3.	Assign FPGA I/O pins:
+	  - CLOCK_50 → 50 MHz system clock
+	  - KEY[0] → active-low pushbutton reset
+	  - HEX[3:0] → 7-segment display outputs
+	  - LEDG[7:0] → (optional) debug counter output
+	4.	Compile and flash to your DE1 (or compatible) development board.
 
-## 🧠 Technical Highlights
-- Uses a 19-bit counter to approximate a 0.01s timing base
-- Clean BCD carry logic cascades across four decimal digits
-- Modular design separates core logic from display driver
+⸻
 
+🧠 Technical Highlights
+	- 19-bit internal counter generates ~10.5 ms timing pulse
+	- BCD digits (bcd0–bcd3) increment with proper cascading logic
+	- Includes bcd7seg submodule for real-time 7-segment display encoding
+	- Clean, modular design suitable for academic FPGA projects
+
+⸻
