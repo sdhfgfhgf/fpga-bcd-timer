@@ -1,7 +1,3 @@
-Perfect. Here’s your final README.md update with the actual demo image and your description integrated clearly and professionally:
-
-⸻
-
 ⏱️ Accurate FPGA Verilog BCD Counter
 
 This project implements a 4-digit BCD (Binary-Coded Decimal) counter in Verilog with near-accurate real-time intervals. Developed as part of APSC 262 – Digital Logic Design at UBC.
